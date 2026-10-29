@@ -41,7 +41,17 @@ window.OUTFITS = [
     desc:'Relaxed linen in earthy khaki with flat sandals and a woven bag. Demo content showing the layout.',
     category:'Spring & Summer Outfits', tags:['Utility & linen'], season:'Summer', occasion:'Casual', colour:'Khaki',
     image:'', pinId:'PIN-003', pinUrl:'[ADD EXISTING PIN URL]', pinTitle:'Linen Shirt Outfit Ideas for Warm Days', mainKeyword:'brown linen shirt outfit',
-    products:['PRD-007','PRD-008','PRD-002'], status:'draft', demo:true }
+    products:['PRD-007','PRD-008','PRD-002'], status:'draft', demo:true },
+  { id:'OUT-004', slug:'cream-sweater-classy-winter-fashion',
+    title:'Cream Sweater Outfit — Classy Winter Fashion',
+    desc:'A classy winter outfit built around a cream sweater.',
+    category:'Winter Outfits', tags:['Capsule wardrobe'], season:'Winter', occasion:'Everyday', colour:'Cream',
+    image:'images/cream-sweater.jpg', pinId:'PIN-004',
+    pinUrl:'https://in.pinterest.com/pin/1121114901020228064/',
+    pinTitle:'Cream Sweater Outfit — Classy Winter Fashion',
+    mainKeyword:'cream sweater winter outfit',
+    products:['PRD-009'], status:'published', demo:false }
+
 ];
 
 window.PRODUCTS = [
@@ -52,5 +62,11 @@ window.PRODUCTS = [
   { id:'PRD-005', name:'Tailored straight trousers (example)', category:'Office Wear', image:'', marketplace:'Amazon UK', url:PH, note:'', verified:'', linkStatus:'placeholder' },
   { id:'PRD-006', name:'Silver-tone drop earrings (example)', category:'Jewellery & Accessories', image:'', marketplace:'Amazon UK', url:PH, note:'', verified:'', linkStatus:'placeholder' },
   { id:'PRD-007', name:'Linen utility shirt (example)', category:'Casual Wear', image:'', marketplace:'Amazon AU', url:PH, note:'', verified:'', linkStatus:'placeholder' },
-  { id:'PRD-008', name:'Flat leather sandals (example)', category:'Shoes', image:'', marketplace:'Amazon AU', url:PH, note:'', verified:'', linkStatus:'placeholder' }
+  { id:'PRD-008', name:'Flat leather sandals (example)', category:'Shoes', image:'', marketplace:'Amazon AU', url:PH, note:'', verified:'', linkStatus:'placeholder' },
+  { id:'PRD-009', name:'Cream sweater', category:'Winter Outfits',
+    image:'', marketplace:'Amazon IN',
+    url:'https://www.amazon.in/dp/B0HHHFPJQV/ref=cm_sw_r_as_gl_apa_gl_i_dl_N3E38TEW2SFB50XDMWQB?linkCode=ml1&tag=pixeldoodle-21&linkId=25c10dc4702053e32e6c368a133276c6',
+    note:'Cream sweater shown in this outfit.',
+    verified:'2026-10-27', linkStatus:'verified' }
+
 ];

@@ -37,7 +37,7 @@
     if (url.protocol !== 'https:' || url.username || url.password || !url.pathname || url.pathname === '/') return false;
     const expectedDomain = (product.marketplace || '').match(/^Amazon\s+([A-Z]{2})$/i);
     if (!expectedDomain || !marketplaceDomains[expectedDomain[1].toUpperCase()]) return false;
-    if (url.hostname.toLowerCase() !== marketplaceDomains[expectedDomain[1].toUpperCase()]) return false;
+    if (url.hostname.toLowerCase().replace(/^www\./, '') !== marketplaceDomains[expectedDomain[1].toUpperCase()]) return false;
     return /\/(?:dp|gp\/product|gp\/aw\/d)\/[A-Z0-9]{10}(?:[/?]|$)/i.test(url.pathname);
   }
 
@@ -63,10 +63,16 @@
 
   function lookCard(look) {
     const index = allLooks.indexOf(look);
+    const product = getProducts(look).find(verifiedAmazonProduct);
+    const imageLink = product
+      ? `href="${esc(product.url)}" target="_blank" rel="sponsored nofollow noopener noreferrer" aria-label="Shop ${esc(look.title)} on Amazon"`
+      : `href="#/look/${encodeURIComponent(look.slug)}" aria-label="View ${esc(look.title)}"`;
+
     return `<article class="look-card">
-      <a class="look-card-link" href="#/look/${encodeURIComponent(look.slug)}" aria-label="View ${esc(look.title)}">
+      <a class="look-card-link" ${imageLink}>
         ${imageBlock(look.image, look.title, index)}
       </a>
+      ${product ? '<p class="card-affiliate-note">As an Amazon Associate I earn from qualifying purchases.</p>' : ''}
       ${lookTags(look)}
       <h3><a href="#/look/${encodeURIComponent(look.slug)}">${esc(look.title)}</a></h3>
       <p>${esc(look.desc)}</p>
